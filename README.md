@@ -1,54 +1,8 @@
-package src;
-import java.util.Scanner;
+The Tourism Management System is a Java-based application designed to manage the operations of a tourism service. It allows users to view, book, and manage tours. The system supports both user and admin functionalities, with the user being able to browse available tours and book seats, while the admin has the ability to add, update, or delete tours, as well as manage bookings.
 
-public class Main {
-    public static void main(String[] args) {
-        TourismManagementSystem system = new TourismManagementSystem();
-        Scanner scanner = new Scanner(System.in);
-        int choice;
+The system is built with Java and uses MySQL as the backend database to store essential information such as tour details, user bookings, and admin credentials. The application implements a simple yet effective command-line interface (CLI) to interact with the system, providing an intuitive experience for both end users and administrators.
 
-        do {
-            System.out.println("\n--- Tourism Management System ---");
-            System.out.println("1. Add Tour");
-            System.out.println("2. View Tours");
-            System.out.println("3. Book Tour");
-            System.out.println("4. Exit");
-            System.out.print("Enter your choice: ");
-            choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
-
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter tour name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Enter location: ");
-                    String location = scanner.nextLine();
-                    System.out.print("Enter price: ");
-                    double price = scanner.nextDouble();
-                    System.out.print("Enter available seats: ");
-                    int seats = scanner.nextInt();
-                    system.addTour(name, location, price, seats);
-                    break;
-
-                case 2:
-                    system.viewTours();
-                    break;
-
-                case 3:
-                    System.out.print("Enter tour ID to book: ");
-                    int tourId = scanner.nextInt();
-                    system.bookTour(tourId);
-                    break;
-
-                case 4:
-                    System.out.println("Exiting system...");
-                    break;
-
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-            }
-        } while (choice != 4);
-
-        scanner.close();
-    }
-}
+Core Features:
+User Features:
+View Tours: Users can browse through the list of available tours, viewing essential details such as the tour name, location, price, and available seats.
+Book Tours: Users can select a tour and book a seat. The
