@@ -1,6 +1,8 @@
 package src;
+import src.TourismManagementSystem;
 import java.util.Scanner;
 
+@SuppressWarnings("unused")
 public class Main {
     public static void main(String[] args) {
         TourismManagementSystem system = new TourismManagementSystem();

@@ -1,7 +1,7 @@
 package src;
 import java.sql.*;
 
-class TourismManagementSystem {
+public class TourismManagementSystem {
     public void addTour(String name, String location, double price, int seats) {
         String query = "INSERT INTO tours (name, location, price, available_seats) VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();
